@@ -5,7 +5,7 @@
 
 int main(int argc, char *argv[])
 {
-    int pid = fork();
+    pid_t pid = fork();
 
     if (pid == 0) {
         printf("Soy el proceso hijo.\n");
