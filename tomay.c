@@ -1,3 +1,6 @@
+// TODO: Print 1 if input is vowel
+
+
 #include <ctype.h>
 #include <stdlib.h>
 #include <unistd.h>
