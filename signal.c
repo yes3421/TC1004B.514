@@ -10,6 +10,7 @@ void hello(int signal)
 
 int main(int argc, char *argv[])
 {
+    signal(2, hello);
     signal(12, hello);
 
     while (1) {
