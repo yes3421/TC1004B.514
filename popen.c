@@ -1,3 +1,5 @@
+// TODO: Cantidad de archivos .c
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,7 +13,6 @@ int main(int argc, char *argv[])
     char read_buffer[MAX_SIZE];
 
     output = popen("ls *.c", "r");
-
     input = popen("./tomay", "w");
 
     while (fgets(read_buffer, MAX_SIZE, output)) {
@@ -19,7 +20,6 @@ int main(int argc, char *argv[])
     }
 
     pclose(output);
-
     pclose(input);
 
     return EXIT_SUCCESS;
