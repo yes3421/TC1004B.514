@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     char read_buffer[MAX_SIZE];
 
     output = popen("ls *.c", "r");
-    input = popen("./tomay", "w");
+    input = popen("wc -l", "w");
 
     while (fgets(read_buffer, MAX_SIZE, output)) {
         fputs(read_buffer, input);
