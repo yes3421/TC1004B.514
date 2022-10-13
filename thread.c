@@ -30,8 +30,6 @@ int main(int argc, char *argv[])
         data.thread_id = i;
 
         pthread_create(&thread_id, NULL, hello_world, (void *)&data);
-
-
     }
 
     pthread_exit(NULL);
