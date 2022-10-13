@@ -14,12 +14,12 @@ int main(int argc, char *argv[])
 
     input = popen("./tomay", "w");
 
-    while (fgets(read_buffer, 80, output)) {
+    while (fgets(read_buffer, MAX_SIZE, output)) {
         fputs(read_buffer, input);
     }
 
     pclose(output);
-    
+
     pclose(input);
 
     return EXIT_SUCCESS;
