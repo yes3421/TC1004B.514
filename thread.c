@@ -3,6 +3,7 @@
 #include <pthread.h>
 
 #define NAME_SIZE 20
+#define NUM_THREADS 10
 
 typedef struct thread_data {
     int thread_id;
@@ -22,14 +23,15 @@ void *hello_world(void *arg)
 
 int main(int argc, char *argv[])
 {
-    for (int i = 0; i != 100; ++i) {
-        Thread_data data;
+    Thread_data thread_data[NUM_THREADS];
+
+    for (int i = 0; i != NUM_THREADS; ++i) {
 
         pthread_t thread_id;
 
-        data.thread_id = i;
+        thread_data[i].thread_id = i;
 
-        pthread_create(&thread_id, NULL, hello_world, (void *)&data);
+        pthread_create(&thread_id, NULL, hello_world, (void *)&thread_data[i]);
     }
 
     pthread_exit(NULL);
